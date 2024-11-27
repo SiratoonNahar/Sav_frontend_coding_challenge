@@ -6,12 +6,12 @@ export const fetchItems = async () => {
   try {
     const response = await axios.get(API_URL);
     if (response.data && response.data.products) {
-      return response.data.products; // Return only the products array
+      return response.data.products; 
     } else {
       throw new Error('Unexpected API response structure');
     }
   } catch (error) {
     console.error('Error fetching data:', error);
-    return []; // Return an empty array on error to avoid breaking the app
+    return []; 
   }
 };
